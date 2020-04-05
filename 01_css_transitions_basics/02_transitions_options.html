@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+        }
+        .move{
+            background-color: var(--static);
+            border: none;
+            box-sizing: border-box;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-family: var(--type);
+            font-size: 1.4rem;
+            height: 70px;
+            line-height: 70px;
+            margin: 20px 0;
+            text-align: center;
+            width: 180px;
+            
+            /* Transition property*/;
+            transition-property: transform();
+            transition-delay: 0.5s;
+            transition-duration: 0.5s;
+        }
+
+        #ease{
+            transition-timing-function: ease;
+        }
+        #linear{
+            transition-timing-function: linear;
+        }
+        #ease-in{
+            transition-timing-function: ease-in;
+        }
+        #ease-out{
+            transition-timing-function: ease-out;
+        }
+        #ease-in-out{
+            transition-timing-function: ease-in-out;
+        }
+
+        .move:hover{
+            background-color: var(--hover);
+            transform: translate(500px,0);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div id="ease" class="move">Ease (default)</div>
+        <div id="linear" class="move">Linear</div>
+        <div id="ease-in" class="move">Ease in</div>
+        <div id="ease-out" class="move">Ease out</div>
+        <div id="ease-in-out" class="move">Ease in out</div>
+    </div>
+</body>
+</html>

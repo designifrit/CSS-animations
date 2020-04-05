@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+        }
+        button{
+            background-color: rgb(73, 55, 238);
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-family: var(--type);
+            font-size: 1.9rem;
+            height: 90px;
+            width: 290px;
+            transition: background-color 0.5s ease 0.5s, color 1s ease-in-out 0.7s, width 0.2s ease 0s;
+        }
+        button:hover{
+            background-color: rgb(31, 224, 118);
+            color: black;
+            width: 400px;
+        }
+    </style>
+
+</head>
+<body>
+    <button>
+        css transitions
+    </button>
+</body>
+</html>
