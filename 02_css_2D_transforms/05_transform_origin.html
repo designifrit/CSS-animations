@@ -15,21 +15,32 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-        img{
+        body img:first-child{
             cursor: pointer;
             width: 300px;
             display: block;
-            margin: 40vh auto;
-            transition: transform 0.4s ease 0s, box-shadow 0.4s ease 0s;
+            margin: 10vh auto;
+            transition: transform 0.3s ease 0s;
         }
-        img:hover{
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
-            transform: translate(-10px,-10px);
+        body img:first-child:hover{
+            transform: rotate(15deg);
+        }
+        body img:nth-child(2){
+            cursor: pointer;
+            width: 300px;
+            display: block;
+            margin: 10vh auto;
+            transition: transform 0.3s ease 0s;
+            transform-origin: top left;
+        }
+        body img:nth-child(2):hover{
+            transform: rotate(15deg);
         }
     </style>
 
 </head>
 <body>
-    <img src="img/grumpy-cat-foto.jpg" alt="Translate function">
+    <img src="img/grumpy-cat-foto.jpg" title="Transform function">
+    <img src="img/grumpy-cat-foto.jpg" title="Transform origin">
 </body>
-</html>
+</html> 
