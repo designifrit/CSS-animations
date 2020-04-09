@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css transforms creative examples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 1s ease 0s;
+        }
+        body{
+            color: white;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--type);
+        }
+            .container{
+                background-color: var(--bg);
+                box-sizing: border-box;
+                height: 333px;
+                overflow: hidden;
+                position: relative;
+                width: 500px;
+            }
+                .container  img{
+                    transform: translateY(0);
+                    transition: var(--transition);
+                    width: 100%;
+                }
+                .container .caption{
+                    box-sizing: border-box;
+                    height: 100%;
+                    left: 0;
+                    padding: 5% 5%;
+                    position: absolute;
+                    transform: translateY(-100%);
+                    transition: var(--transition);
+                    top: 0;
+                    width: 90%;
+                }
+                    .container:hover img{
+                        transform: translateY(100%);
+                    }
+                    .container:hover .caption{
+                        transform: translateY(0);
+                    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/image1.jpeg" alt="Image">
+        <div class="caption">
+            <h1>Image hover effect</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, minus voluptates ipsa neque reprehenderit quam eaque sit tempora laborum.</p>
+        </div>
+    </div>
+</body>
+</html>

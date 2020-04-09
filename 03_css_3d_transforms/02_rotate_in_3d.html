@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+        }
+        body{
+            box-sizing: border-box;
+            overflow: hidden;
+
+            /* Primero se define la propiedad PERSPECTIVE para que la transformación en 3D funcione. Se asigna un valor cercano a la distancia entre la pantalla con la vista del usuario */
+            perspective: 900px;
+        }
+            body img{
+                cursor: pointer;
+                width: 300px;
+                display: block;
+                margin: 10vh auto;
+                transition: transform 0.3s ease 0s;
+            }
+            body img:hover{
+                transform: rotateX(60deg);
+            }
+    </style>
+
+</head>
+<body>
+    <img src="img/grumpy-cat-foto.jpg" title="Transform function">
+</body>
+</html> 
