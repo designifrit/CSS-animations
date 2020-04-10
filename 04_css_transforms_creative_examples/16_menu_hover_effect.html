@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css transforms creative examples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.7s ease 0s;
+        }
+        body{
+            background-color: var(--static);
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--type);
+        }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+            }
+                ul li{
+                    list-style: none;
+                }
+                    ul li a{
+                        display: block;
+                        color: white;
+                        font-size: 1.6rem;
+                        padding: 10px 15px;
+                        position: relative;
+                        text-decoration: none;
+                        transition: var(--transition);
+                    }
+                    ul li a::before{
+                        background-color: white;
+                        content: '';
+                        height: 1px;
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        transform: scaleX(0);
+                        transform-origin: left;
+                        transition: var(--transition);
+                        width: 100%;
+                    }
+                    ul li a::after{
+                        background-color: white;
+                        bottom: 0;
+                        content: '';
+                        height: 1px;
+                        position: absolute;
+                        right: 0;
+                        transform: scaleX(0);
+                        transform-origin: right;
+                        transition: var(--transition);
+                        width: 100%;
+                    }
+                        ul li a:hover{
+                            color: var(--hover);
+                        }
+                        ul li a:hover::before, ul li a:hover::after{
+                            transform: scaleX(1);
+                        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+</html>
