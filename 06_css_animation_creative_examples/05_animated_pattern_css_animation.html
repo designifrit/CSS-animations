@@ -13,40 +13,37 @@
             --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
             --bg: #222;
             --transition: all 0.7s ease 0s;
+            --animation: element 10s linear infinite 0s;
         }
         body{
+            align-items: center;
             background-color: var(--static);
             display: flex;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
             font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
             overflow: hidden;
+            padding: 0;
         }
-        h1{
-            animation: text 3s linear infinite alternate;
-            color: white;
-            font-size: 3.5rem;
-            letter-spacing: 5px;
-            line-height: 50px;
-            text-align: center;
-            text-shadow: 0 1px 0 rgb(172, 169, 189),
-                        0 2px 0 rgb(172, 169, 189),
-                        0 3px 0 rgb(172, 169, 189),
-                        0 4px 0 rgb(172, 169, 189),
-                        2px 18px 10px rgba(0,0,0,0.4);
-        }
-        @keyframes text{
-            0%{
-                transform: rotate(5deg);
+            .pattern{
+                animation: var(--animation);
+                background: url(img/pattern.jpg);
+                background-size: 1400px 980px;
+                height: 100vh;
+                width: 100%;
             }
-            100%{
-                transform: rotate(-5deg);
+            @keyframes element{
+                from{
+                    background-position: 0px 0px;
+                }
+                to{
+                    background-position: 1400px 980px;
+                }
             }
-        }
     </style>
 </head>
 <body>
-    <h1>COMING <br>SOON</h1>
+    <div class="pattern"></div>
 </body>
 </html>

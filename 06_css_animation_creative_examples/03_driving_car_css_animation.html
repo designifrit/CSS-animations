@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.7s ease 0s;
+        }
+        body{
+            align-items: center;
+            background-color: var(--static);
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+            div.background{
+                animation: drive 10s linear infinite 0s;
+                background: url(img/bg1.jpg);
+                background-position: bottom left;
+                background-size: cover;
+                height: 100vh;
+                width: 100%;
+            }
+                img:nth-child(1){
+                    bottom: -45px;
+                    left: 150px;
+                    position: absolute;
+                    width: 150px;
+                }
+                img:nth-child(2){
+                    bottom: 25px;
+                    left: 350px;
+                    position: absolute;
+                    width: 85px;
+                }
+                @keyframes drive{
+                    from{
+                        background-position: bottom left;
+                    }
+                    to{
+                        background-position: bottom right;
+                    }
+                }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="img/car.png">
+        <img src="img/motobike.png">
+    </div>
+</body>
+</html>

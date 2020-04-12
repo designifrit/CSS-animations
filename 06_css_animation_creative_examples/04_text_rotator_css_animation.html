@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.7s ease 0s;
+            --animation: element 4s linear infinite 0s;
+        }
+        body{
+            align-items: center;
+            background-color: var(--static);
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+            h1{
+                text-shadow: 0 1px 0 rgb(197, 197, 197),
+                            0 2px 0 rgb(197, 197, 197),
+                            1px 4px 10px rgba(0,0,0,0.4);
+                color: white;
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+                span::before{
+                    animation: var(--animation);
+                    color: var(--hover);
+                    content: 'transform';
+                    text-shadow: 0 1px 0 rgb(35, 109, 78), 0 2px 0 rgb(35, 109, 78);
+                    text-transform: uppercase;
+                }
+                @keyframes element{
+                    0%{
+                        content: 'transform';
+                    }
+                    30%{
+                        content: 'animation';
+                    }
+                    65%{
+                        content: 'transitions';
+                    }
+                }
+    </style>
+</head>
+<body>
+    <h1>I love CSS <span></span></h1>
+</body>
+</html>

@@ -22,31 +22,29 @@
             justify-content: center;
             font-family: var(--type);
             overflow: hidden;
+            perspective: 200px;
         }
-        h1{
-            animation: text 3s linear infinite alternate;
-            color: white;
-            font-size: 3.5rem;
-            letter-spacing: 5px;
-            line-height: 50px;
-            text-align: center;
-            text-shadow: 0 1px 0 rgb(172, 169, 189),
-                        0 2px 0 rgb(172, 169, 189),
-                        0 3px 0 rgb(172, 169, 189),
-                        0 4px 0 rgb(172, 169, 189),
-                        2px 18px 10px rgba(0,0,0,0.4);
+        .loading{
+            animation: load 5s linear infinite 0s;
+            background-color: white;
+            border-radius: 15px;
+            height: 100px;
+            width: 100px;
         }
-        @keyframes text{
+        @keyframes load{
             0%{
-                transform: rotate(5deg);
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            50%{
+                transform: rotateX(0deg) rotateY(180deg);
             }
             100%{
-                transform: rotate(-5deg);
+                transform: rotateX(180deg) rotateY(180deg);
             }
         }
     </style>
 </head>
 <body>
-    <h1>COMING <br>SOON</h1>
+    <div class="loading"></div>
 </body>
 </html>
