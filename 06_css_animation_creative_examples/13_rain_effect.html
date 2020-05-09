@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.5s ease;
+            --animation: rain 0.3s linear infinite;
+            --heart: rgb(255, 0, 76);
+        }
+        body{
+            align-items: center;
+            background-color: var(--static);
+            background-image: url(img/castle.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        .rain{
+            animation: var(--animation);
+            background: url(img/rain.png);
+            height: 100%;
+            opacity: 0.7;
+            width: 100%;
+        }
+        @keyframes rain{
+            0%{background-position: 0% 0%;}
+            100%{background-position: 15% 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="rain"></div>
+</body>
+</html>

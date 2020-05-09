@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.7s ease;
+            --animation: element 0.3s linear 1;
+        }
+        body{
+            align-items: center;
+            background-color: var(--static);
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        a{
+            border: 3px solid white;
+            color: white;
+            font-size: 2.5rem;
+            padding: 40px 80px;
+            text-decoration: none;
+            transition: var(--animation);
+        }
+            a:hover{
+                animation: var(--animation);
+                border: 3px solid var(--hover);
+                color: var(--hover);
+                transition: var(--transition);
+            }
+            @keyframes element{
+                33%{transform: rotate(10deg);}
+                66%{transform: rotate(-10deg);}
+                100{transform: rotate(10deg);}
+            }
+    </style>
+</head>
+<body>
+    <a href="#">Hover me</a>
+</body>
+</html>

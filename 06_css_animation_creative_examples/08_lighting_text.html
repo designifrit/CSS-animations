@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.5s ease;
+            --animation: lighting 2s linear infinite;
+        }
+        body{
+            align-items: center;
+            background-color: var(--bg);
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+            ul li{
+                animation: var(--animation);
+                color: rgb(71, 71, 71);
+                font-size: 3rem;
+                letter-spacing: 15px;
+                list-style: none;
+            }
+                @keyframes lighting {
+                    0%{
+                        color: white;
+                        text-shadow: none;
+                    }
+                    40%{
+                        color: rgb(71, 71, 71);
+                        text-shadow: none;
+                    }
+                    50%{
+                        color: white;
+                        text-shadow: 0 0 7px white, 0 0 50px white, 0 10px 10px black;
+                    }
+                    60%{
+                        color: white;
+                        text-shadow: none;
+                    }
+                    90%{
+                        color: rgb(71, 71, 71);
+                        text-shadow: none;
+                    }
+                    100%{
+                        color: white;
+                        text-shadow: 0 0 7px white, 0 0 50px white, 0 10px 10px black;
+                    }
+                }
+                ul li:nth-child(1){
+                    animation-delay: 0;
+                }
+                ul li:nth-child(2){
+                    animation-delay: 0.1s;
+                }
+                ul li:nth-child(3){
+                    animation-delay: 0.2s;
+                }
+                ul li:nth-child(4){
+                    animation-delay: 0.3s;
+                }
+                ul li:nth-child(5){
+                    animation-delay: 0.4s;
+                }
+                ul li:nth-child(6){
+                    animation-delay: 0.5s;
+                }
+                ul li:nth-child(7){
+                    animation-delay: 0.6s;
+                }
+                ul li:nth-child(8){
+                    animation-delay: 0.7s;
+                }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>L</li>
+        <li>I</li>
+        <li>G</li>
+        <li>H</li>
+        <li>T</li>
+        <li>I</li>
+        <li>N</li>
+        <li>G</li>
+    </ul>
+</body>
+</html>

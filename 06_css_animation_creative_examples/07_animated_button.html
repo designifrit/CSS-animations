@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --type:'Roboto', sans-serif;
+            --static: rgb(85, 47, 255);
+            --hover: rgb(61, 230, 159);
+            --degr: linear-gradient(to bottom, rgb(115, 83, 255) 0%, rgb(85, 47, 255) 100%);
+            --bg: #222;
+            --transition: all 0.5s ease;
+            --animation: element 1.2s linear infinite;
+        }
+        body{
+            align-items: center;
+            background-color: var(--bg);
+            display: flex;
+            font-family: var(--type);
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        a{
+            border: 3px solid white;
+            color: white;
+            font-size: 2.5rem;
+            overflow: hidden;
+            padding: 40px 80px;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+            a::before{
+                animation: var(--animation);
+                background-color: var(--hover);
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transform: skew(-15deg);
+                transition: var(--transition);
+                width: 25%;
+                z-index: -1;
+            }
+            a::after{
+                /* background-color: var(--static); */
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent; 
+                border-left:15px solid var(--static);
+                content: '';
+                height: 0%;
+                left: 0;
+                position: absolute;
+                top: 49px;
+                transition: all 0.5s ease 0.2s;
+                transform: translateX(-150px);
+                width: 0%;
+            }
+                @keyframes element{
+                    from{left: -130px;}
+                    to{left: 100%;}
+                }
+                a:hover{
+                    border: 3px solid var(--static);
+                    color: var(--static);
+                }
+                a:hover::before{
+                    background-color: white;
+                    animation: none;
+                    transform: skew(0deg);
+                    width: 100%;
+                }
+                a:hover::after{
+                    transform: translateX(50px);
+                }
+    </style>
+</head>
+<body>
+    <a href="#">Hover me</a>
+</body>
+</html>
